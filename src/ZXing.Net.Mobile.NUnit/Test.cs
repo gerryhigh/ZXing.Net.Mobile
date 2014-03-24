@@ -63,6 +63,49 @@ namespace ZxingSharp.Mobile.Test
 		}
 
 		[Test]
+		public void Code39Vin()
+		{
+			var result = Decode("code39-vin.jpg", BarcodeFormat.CODE_39);
+
+			Assert.IsNotNull(result, "NULL Result");
+			Assert.IsTrue(result.Text.Equals("I1FTDR15X1RTA88717"), "Result Text Incorrect: " + result.Text);
+		}
+
+		[Test]
+		public void Code39Vin2()
+		{
+			var result = Decode("code39-vin2.jpg", BarcodeFormat.CODE_39);
+
+			Assert.IsNotNull(result, "NULL Result");
+			Assert.IsTrue(result.Text.Equals("1FMCU0D7XBKA39660"), "Result Text Incorrect: " + result.Text);
+		}
+		[Test]
+		public void Code39Vin3()
+		{
+			var result = Decode("code39-vin3.jpg", BarcodeFormat.CODE_39);
+
+			Assert.IsNotNull(result, "NULL Result");
+			Assert.IsTrue(result.Text.Equals("WBSF0321SEN91670"), "Result Text Incorrect: " + result.Text);
+		}
+		[Test]
+		public void Code39Vin4()
+		{
+			var result = Decode("code39-vin4.jpg", BarcodeFormat.CODE_39);
+
+			Assert.IsNotNull(result, "NULL Result");
+			Assert.IsTrue(result.Text.Equals("3FRXF75M64V678673"), "Result Text Incorrect: " + result.Text);
+		}
+		[Test]
+		public void Code39Vin5()
+		{
+			var result = Decode("code39-vin5.jpg", BarcodeFormat.CODE_39);
+
+			Assert.IsNotNull(result, "NULL Result");
+			Assert.IsTrue(result.Text.Equals("JA3BN74K6PY030712"), "Result Text Incorrect: " + result.Text);
+		}
+
+
+		[Test]
 		public void ITF()
 		{
 			var result = Decode("itf.png", BarcodeFormat.ITF);
@@ -134,6 +177,28 @@ namespace ZxingSharp.Mobile.Test
 
 			return reader;
 		}
+
+//		public BarcodeReader GetReader(BarcodeFormat? format, KeyValuePair<DecodeHintType, object>[] additionalHints)
+//		{
+//
+//			var reader = new BarcodeReader();
+//
+////			var hints = new Dictionary<DecodeHintType, object>();
+//
+//			if (format.HasValue) {
+//				reader.Options.PossibleFormats = new List<BarcodeFormat>(){ format.Value };
+////				hints.Add(DecodeHintType.POSSIBLE_FORMATS, new List<BarcodeFormat>() { format.Value });
+//			}
+//
+////			if (additionalHints != null)
+////				foreach (var ah in additionalHints)
+////					hints.Add(ah.Key, ah.Value);
+////
+////
+////			reader.Hints = hints;
+//
+//			return reader;
+//		}
 
 		public BinaryBitmap GetImage(string file)
 		{

@@ -67,5 +67,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\l2of5verysmall.png" />
+    <None Include="Images\code39-vin2.jpg" />
+    <None Include="Images\code39-vin3.jpg" />
+    <None Include="Images\code39-vin5.jpg" />
+    <None Include="Images\code39-vin4.jpg" />
+    <None Include="Images\code39-vin.jpg" />
   </ItemGroup>
 </Project>
